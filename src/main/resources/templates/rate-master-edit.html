@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="header/header :: varHead">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container-fluid" style="padding-right: 0px !important; padding-left: 0px !important;">
+	<div th:replace="header/header :: varHeader"></div>
+		<form th:action="@{/updateRate}"
+			th:object="${rateMasterEntity}" method="post">
+			<div class="container" style="min-height:30vh" align="center">
+				<p>Edit Source details</p>
+				<hr>
+				<table class="table">
+				<tr style="display: none;">
+				<td> <label for="source"><b>Rate ID</b></label> </td>
+				<td><input type="text" placeholder="source name" th:field="*{rateId}" name="rateId" id="rateId" readonly="readonly"> </td>
+				</tr>
+				<tr style="display: none;">
+				<td> <label for="source"><b>SOURCE NAME</b></label> </td>
+				<td>  <input type="text" placeholder="source name" th:field="*{sourceId}" name="destinationId" id="destinationId" readonly="readonly"></td>
+				</tr>
+				<tr>
+				<td> <label for="source"><b>SOURCE NAME</b></label> </td>
+				<td><input type="text" placeholder="source name" th:field="*{sourceName}" name="sourceId" id="source"  readonly="readonly"></td>
+				</tr>
+				<tr>
+				<td> <label for="source"><b>Destination NAME</b></label> </td>
+				<td> <input type="text" placeholder="source name" th:field="*{destinationName}" name="destinationId" id="destinationId" readonly="readonly"></td>
+				</tr>
+				<tr style="display: none;">
+				<td> <label for="source"><b>Destination NAME</b></label> </td>
+				<td>  <input type="text" placeholder="source name" th:field="*{destinationId}" name="destinationId" id="destinationId" readonly="readonly"></td>
+				</tr>
+				<tr>
+				<td> <label for="source"><b>Total Fare</b></label> </td>
+				<td><input type="text" placeholder="source name" th:field="*{fare}" name="fare" id="fare" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ></td>
+				</tr>
+				<tr>
+				<td colspan="2" align="center"> <input	type="submit" name="submit" class="registerbtn"> </td>
+				</tr>
+				</table>
+			</div>
+		</form>
+		<div th:replace="header/header :: varFooter"></div>
+	</div>
+</body>
+</html>

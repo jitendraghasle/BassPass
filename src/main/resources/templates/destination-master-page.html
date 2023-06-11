@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="header/header :: varHead">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<div class="container-fluid"
+		style="padding-right: 0px !important; padding-left: 0px !important;">
+		<div th:replace="header/header :: varHeader"></div>
+		<form th:action="@{/saveDestinationMaster}"
+			th:object="${destinationMasterEntity}" method="post">
+			<div class="container" style="min-height: 30vh">
+				<h1 th:text="${msg}"></h1>
+				<p>Create Source.</p>
+				<hr>
+
+				<label for="source"><b>source name</b></label> <input type="text"
+					placeholder="source name" th:field="*{destinationName}"
+					name="sourceName" id="source" required> <input
+					type="submit" name="submit" class="registerbtn">
+				</button>
+			</div>
+		</form>
+		<div class="container">
+			<table class="table">
+				<tr>
+					<td><b>Sir NO.</b></td>
+					<td>Destination Name</td>
+					<td></td>
+				</tr>
+
+				<tr th:each="ob, iStat : ${sourceList}">
+					<td>[[${iStat.count}]]</td>
+					<td style="display: none;">[[${ob.destinationId}]]</td>
+					<td>[[${ob.destinationName}]]</td>
+					<td><a th:href="@{'deleteDestination/'+${ob.destinationId}}"
+						style="background-color: brown;">DELETE</a> || <a
+						th:href="@{'editDestination/'+${ob.destinationId}}"
+						style="background-color: yellowgreen;"> EDIT </a></td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div th:replace="header/header :: varFooter"></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+    <div class="pb-0 pb-lg-4 footerMain" >
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-4 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+                  <a class="navbar-brand" href="#" style="font-family: 'Redressed', cursive;">BUS Booking</a>
+              <p class=" mb-0 fw-medium">Book your trip in minute, get full Control for much longer.</p>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+              <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Company</h4>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/about}">About</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/registration">Sign Up</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/booking}">Bookings</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+              <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contact</h4>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/faq}">Help/FAQ</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/login}">Login</a></li>
+                <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" th:href="@{/contact}">Contact</a></li>
+              </ul>
+            </div>
+            
+            
+          </div>
+        </div><!-- end of .container-->
+
+      </div>
+    </div>
+</body>
+
+</html>

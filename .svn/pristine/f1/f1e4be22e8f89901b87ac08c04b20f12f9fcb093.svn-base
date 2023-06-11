@@ -1,0 +1,48 @@
+package com.qrcode.buspass.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.qrcode.buspass.entity.SourceMastereEntity;
+import com.qrcode.buspass.entity.UserEntity;
+import com.qrcode.buspass.service.SourceMasterService;
+import com.qrcode.buspass.service.SourceMasterServiceImpl;
+
+@Controller
+public class SourceMasterController {
+	
+	@Autowired
+	SourceMasterService sourceMasterService;
+	
+	@GetMapping("/sourceMasterPage")
+	public String sourceMasterPage(@ModelAttribute("sourceMastereEntity") SourceMastereEntity  sourceMastereEntity,Model model) {
+		model.addAttribute("sourceMastereEntity", sourceMastereEntity);
+		String msg=(String) model.asMap().get("message");
+		model.addAttribute("msg", msg);
+		return "source-master-page";
+		
+	}
+	
+	
+	@PostMapping("/saveSourceMaster")
+	public String saveSourceMaster(@ModelAttribute("sourceMastereEntity") SourceMastereEntity  sourceMastereEntity,Model model,RedirectAttributes redirectAttributes) {
+		
+		System.out.println("i am source    "+sourceMastereEntity.getSourceName());
+		Integer saveId=sourceMasterService.save(sourceMastereEntity);
+		
+		if(saveId>0)
+			redirectAttributes.addFlashAttribute("message","success");
+		else
+			redirectAttributes.addFlashAttribute("message","failure");
+			
+	//	model.addAttribute("sourceMastereEntity", sourceMastereEntity);
+		return "redirect:/sourceMasterPage";
+		
+	}
+	
+}

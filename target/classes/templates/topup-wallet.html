@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="header/header :: varHead">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+	padding: 16px;
+	background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+	color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid"
+		style="padding-right: 0px !important; padding-left: 0px !important;">
+		<div th:replace="header/header :: varHeader"></div>
+		<form th:action="@{/topupWallet}"
+			th:object="${amountAddEntity}" method="post">
+			<div class="container" style="min-height:30vh">
+				<h1 th:text="${msg}"></h1>
+				<p>Create Source.</p>
+				<hr>
+
+				<label for="source"><b>source name</b></label> <input type="text"
+					placeholder="source name" th:field="*{sourceName}"
+					name="sourceName" id="source" required> <input
+					type="submit" name="submit" class="registerbtn">
+				</button>
+			</div>
+		</form>
+		<div class="container">
+		<h2>EMPLOYEE DATA PAGE </h2>
+		<table border="1" class="table">
+			<tr>
+				<th>SOURCE ID</th>
+				<th>SOURCE NAME</th>
+				<th> </th>
+			</tr>
+			
+			
+			
+			<!-- <tr  th:each="ob : ${sourceList}" > -->
+			<tr  th:each="ob, iStat : ${sourceList}">
+			<td>[[${iStat.count}]]</td>
+				<td style="display: none;">[[${ob.sourceId}]]</td>
+				<td>[[${ob.sourceName}]]</td>
+				<td>
+					<a th:href="@{'deleteSource/'+${ob.sourceId}}" style="background-color: brown;">DELETE</a> || <a th:href="@{'editSource/'+${ob.sourceId}}" style="background-color: yellowgreen;"> EDIT </a>
+				</td>
+			</tr>
+			</table>
+		</div>
+		<div th:replace="header/header :: varFooter"></div>
+	</div>
+</body>
+</html>

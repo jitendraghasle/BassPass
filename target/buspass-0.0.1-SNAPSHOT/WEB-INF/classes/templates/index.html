@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head th:replace="header/header :: varHead">
+  
+</head>
+
+<body>
+    <div class="container-fluid" style="padding-right: 0px  !important;
+    padding-left: 0px !important;">
+        <div  th:replace="header/header :: varHeader"></div>
+        <div class="bannermain">
+            <div class="hero-image">
+                <div class="hero-text">
+                    <h1 style="font-size:50px">Online Bus Ticketing System</h1>
+                    <p>Get All In One Place</p>
+                    <button class="btn">Know How</button>
+                </div>
+            </div>
+        </div>
+        <div class="serviceMain" id="service">
+            <div class="container">
+                <div class="position-absolute flowbg">
+                   
+              </div>
+                <div class="mb-7 text-center">
+                    <h5 class="text-secondary text-uppercase">Services </h5>
+                    <h3 class="fs-xl-10 fs-lg-8 fs-7 fw-bold font-cursive text-capitalize">We Offer Best Services</h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                            <div class="card-body p-xxl-5 p-4"> <img src="images/time.png" width="75" alt="Service">
+                                <h4 class="mb-3">Time Saving</h4>
+                                <p class="mb-0 fw-medium">Book all your tickets in no time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                            <div class="card-body p-xxl-5 p-4"> <img src="images/payment.png" width="75" alt="Service">
+                                <h4 class="mb-3">Easy Payments</h4>
+                                <p class="mb-0 fw-medium">Online payments makes just like that!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                            <div class="card-body p-xxl-5 p-4"> <img src="images/userf.png" width="75" alt="Service">
+                                <h4 class="mb-3">User friendly</h4>
+                                <p class="mb-0 fw-medium">Just leave it on me, like User friendly.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-6">
+                        <div class="card service-card shadow-hover rounded-3 text-center align-items-center">
+                            <div class="card-body p-xxl-5 p-4"> <img src="images/report.png" width="75" alt="Service">
+                                <h4 class="mb-3">Reporting</h4>
+                                <p class="mb-0 fw-medium">All you need is just one click!!!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="header/header :: varFooter">
+        </div>
+    </div>
+</body>
+
+</html>

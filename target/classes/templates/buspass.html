@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bus Pass</title>
+</head>
+<body>
+    <h1>Bus Pass</h1>
+
+    <!-- Generate the QR code image -->
+    <img th:src="'data:image/png;base64,' + ${qrCodeImage}" alt="QR Code" />
+
+</body>
+</html>
