@@ -1,0 +1,24 @@
+package com.qrcode.buspass.service;
+
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qrcode.buspass.Repo.SourceMasterRepo;
+import com.qrcode.buspass.entity.SourceMastereEntity;
+
+@Service
+@Transactional
+public class SourceMasterServiceImpl implements SourceMasterService{
+	@Autowired
+	SourceMasterRepo sourceMasterRepo;
+	@Override
+	public Integer save(SourceMastereEntity sourceMastereEntity) {
+		// TODO Auto-generated method stub
+		
+		return sourceMasterRepo.save(sourceMastereEntity);
+	}
+
+}

@@ -1,0 +1,49 @@
+package com.qrcode.buspass.controller;
+
+import java.util.List;
+
+import javax.xml.transform.Source;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.qrcode.buspass.entity.DestinationMasterEntity;
+import com.qrcode.buspass.entity.RateMasterEntity;
+import com.qrcode.buspass.entity.SourceMastereEntity;
+import com.qrcode.buspass.service.RateMasterService;
+
+@Controller
+public class RateMasterController {
+ @Autowired
+ RateMasterService rateMasterService;
+	@GetMapping("/rateMasterPage")
+	public String rateMasterPage(@ModelAttribute("rateMasterEntity") RateMasterEntity rateMasterEntity,Model model) {
+		model.addAttribute("rateMasterEntity", rateMasterEntity);
+		
+		List<SourceMastereEntity> lst=rateMasterService.fetchAllSource(); 
+		model.addAttribute("lst", lst);
+		
+		List<DestinationMasterEntity> ldt=rateMasterService.fetAllDestination();
+		model.addAttribute("ldt", ldt);
+		String msg=(String) model.asMap().get("message");
+		model.addAttribute("msg", msg);
+		return "rate-master-page";
+	}
+	@PostMapping("/saveRateMaster")
+	public String saveRateMaster(@ModelAttribute("rateMasterEntity") RateMasterEntity  rateMasterEntity,Model model,RedirectAttributes redirectAttributes) {
+		
+		System.out.println("i am source    "+rateMasterEntity);
+		Integer saveId=rateMasterService.save(rateMasterEntity);
+		
+		if(saveId>0)
+			redirectAttributes.addFlashAttribute("message","success");
+		else
+			redirectAttributes.addFlashAttribute("message","failure");
+		return "redirect:/rateMasterPage";
+}
+}

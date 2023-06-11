@@ -1,0 +1,9 @@
+package com.qrcode.buspass.service;
+
+import com.qrcode.buspass.entity.SourceMastereEntity;
+
+public interface SourceMasterService {
+
+	Integer save(SourceMastereEntity sourceMastereEntity);
+
+}

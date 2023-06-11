@@ -1,0 +1,25 @@
+package com.qrcode.buspass.Repo;
+
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
+
+import com.qrcode.buspass.entity.SourceMastereEntity;
+
+@Repository
+public class SourceMasterRepoImpl implements SourceMasterRepo {
+	
+	@PersistenceContext
+	EntityManager entityManager;
+
+	@Override
+	public Integer save(SourceMastereEntity sourceMastereEntity) {
+		// TODO Auto-generated method stub
+		Session session=entityManager.unwrap(Session.class);
+		return (Integer) session.save(sourceMastereEntity);
+	}
+
+}

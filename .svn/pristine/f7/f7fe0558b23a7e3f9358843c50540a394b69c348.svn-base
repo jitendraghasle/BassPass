@@ -1,0 +1,134 @@
+/*Header*/
+.mainbg,.btn {
+    background: #c3333d !important;
+}
+a,.txtcolor,.btn,.button {
+    color: #fff !important;
+}
+a.navbar-brand {
+    color: #ffeb3b !important;
+    font-weight: 800;
+}
+a.nav-link:hover,.btn:hover,button:hover {
+    transition-duration: 0.6s;
+    background: #ffeb3b;
+    color: #000 !important;
+}
+body *{
+  font-family: 'Redressed', cursive;
+font-family: 'Roboto Slab', serif;
+}
+body {
+    background: #Fafafa;
+}
+
+
+/*banner*/
+.hero-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/bannerBus.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 87vh;
+  background-attachment:fixed ;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+/*servies*/
+.flowbg {
+    z-index: 1;
+    left: 20px;
+}
+
+div#service {
+    background: #fff;
+    padding: 40px 0;
+}
+.service-card {
+    min-height: 180px;
+    box-shadow: 0px 0px 3px #ccc;
+}
+/*footer*/
+.footerMain {
+    background: #c3333d;
+    padding: 30px 0;
+}
+/*Registration*/
+.regformMain {
+    background: #ffffffc2;
+    padding: 50px 50px;
+}
+.regformMain {
+    background: #ffffffc2;
+    padding: 50px 50px;
+    position: relative;
+    top: 40px;
+}
+/*Login*/
+.loginmain {
+    background: #fff;
+}
+.loginn {
+    min-height: 60vh;
+    width: 75%;
+    margin: auto;
+    padding: 40px 0;
+}
+.row.d-flex.justify-content-center.align-items-center.h-100 {
+    margin: 20px 0;
+}
+.pagehead {
+    margin-bottom: 33px;
+    color: #f7dd3b;
+    text-shadow: 1px 0px #c3333d;
+}
+/*Home*/
+.pgcontaents{
+  min-height: 65vh;
+}
+.BookingMain {
+    max-width: 60%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 30px 50px;
+}
+.Booking2Main {
+    background: #fff;
+    padding: 30px 0;
+     margin: 20px auto;
+}
+.img.qrcode {
+    width: 120px;
+}
+.lableMain {
+    font-weight: 800;
+}
+
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    margin-right: auto;
+    margin-left: auto;
+}

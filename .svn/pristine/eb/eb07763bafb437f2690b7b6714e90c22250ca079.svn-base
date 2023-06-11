@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Booking</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"> -->
+    <script src="js/jquery.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto+Slab:wght@200;400;600;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="hearderMAin">
+            <nav class="navbar navbar-expand-lg mainbg">
+                <a class="navbar-brand" href="#" style="font-family: 'Redressed', cursive;">BUS Booking</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"><i class="fa fa-home"> </i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Offers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav  my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="registration.html">Sign Up</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="regmainmain">
+            <div class="hero-image">
+                <div class="regformMain container">
+                    <h2 class="pagehead text-center">Book Here </h2>
+                    <form action="/action_page.php">
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="from">From</label>
+                                <input type="text" class="form-control" id="from" placeholder="From Where" name="from">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="to">To</label>
+                                <input type="text" class="form-control" id="to" placeholder="To Where" name="to">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" id="date" placeholder="Travel date" name="date">
+                            </div>
+                        </div>
+						<div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="name">Passenger Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Full Name" name="name">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="age">Age</label>
+                                <input type="text" class="form-control" id="age" placeholder="Enter age" name="age">
+                            </div>
+                            <div class="col-md-4">
+                                <label>Gender</label><br/>
+                                <input type="radio" class="iprd" id="radio1" name="optradio" value="Male"> Male
+                                <input type="radio" class="iprd" id="radio2" name="optradio" value="Female"> Female
+                                <input type="radio" class="iprd" id="radio3" name="optradio" value="Other"> Other
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-default">Book It</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="pb-0 pb-lg-4 footerMain">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+                        <a class="navbar-brand" href="#" style="font-family: 'Redressed', cursive;">BUS Booking</a>
+                        <p class=" mb-0 fw-medium">Book your trip in minute, get full Control for much longer.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+                        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Company</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">About</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Sign Up</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Bookings</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+                        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contact</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Help/FAQ</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Login</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- end of .container-->
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="header/header :: varHead">
+</head>
+
+<body>
+    <div class="container-fluid">
+          <div  th:replace="header/header :: varHeader"></div>
+            
+        <div class="regmainmain">
+            <div class="hero-image">
+                <div class="regformMain container">
+                    <h2 class="pagehead text-center">Sign Up</h2>
+                     	<input type="hidden" name="message" id="message"
+					th:value="${message}" />
+                    <form   th:object="${userEntity}" th:action="@{/signUp}" method="post" >
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control"  th:field="*{fullName}"  id="fullName" placeholder="Enter Full Name" name="name">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control"  th:field="*{emailAdd}" id="email" placeholder="Enter email" name="email">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="mobile">Mobile</label>
+                                <input type="text" class="form-control" th:field="*{mobileNumber}" id="mobileNumber" placeholder="Enter mobile" name="mobile">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4">
+                                <label>Gender</label><br/>
+                                <input type="radio" class="iprd" id="radio1" name="optradio" value="Male" th:field="*{emailAdd}"> Male
+                                <input type="radio" class="iprd" id="radio2" name="optradio" value="Female" th:field="*{emailAdd}"> Female
+                                <input type="radio" class="iprd" id="radio3" name="optradio" value="Other" th:field="*{emailAdd}"> Other
+                            </div>
+                            <div class="col-md-4">
+                                <label for="pwd">Password</label>
+                                <input type="password" class="form-control" th:field="*{password}" id="password" placeholder="Enter password" name="password">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="conpwd">Confirm Password</label>
+                                <input type="password" class="form-control" th:field="*{confirmPassword}"  placeholder="Re-enter password" name="confirmPassword">
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-default">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+       <div th:replace="header/header :: varFooter">
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    jQuery(document).ready(function($) {
+	var varMessage = $("#message").val();
+	if (varMessage != "" && varMessage != undefined) {
+		swal.fire(varMessage);
+	}
+});
+    
+    </script>
+</body>
+</html>

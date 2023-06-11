@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="header/header :: varHead">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: black;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+	padding: 16px;
+	background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+	background-color: #ddd;
+	outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+	background-color: #04AA6D;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	opacity: 0.9;
+}
+
+.registerbtn:hover {
+	opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+	color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+	background-color: #f1f1f1;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="container-fluid"
+		style="padding-right: 0px !important; padding-left: 0px !important;">
+		<div th:replace="header/header :: varHeader"></div>
+
+		<form th:action="@{/saveRateMaster}" th:object="${rateMasterEntity}"
+			method="post">
+			<div class="container">
+				<h1 th:text="${msg}"></h1>
+				<p>Enter Rate</p>
+				<hr>
+				<table class="table">
+					<tr>
+						<td><label for="source"><b>amount</b></label></td>
+						<td><input type="number" placeholder="amount"
+							th:field="*{fare}" name="email" id="email" required></td>
+					</tr>
+					<tr>
+						<td><label for="cars">Source_ID:</label>
+							</option></td>
+
+
+						<td><select name="cars" th:field="*{sourceId}" id="cars">
+								<option th:each="var :${lst}" th:value="${var.sourceId}"
+									th:text="${var.sourceName}"></option>
+						</select></td>
+					</tr>
+					<tr>
+						<td><label for="cars" th:field="*{destinationId}">Destination
+								ID</label></td>
+						<td><select name="cars" id="cars" th:field="*{destinationId}">
+								<option th:each="var :${ldt}" th:value="${var.destinationId}"
+									th:text="${var.destinationName}"></option>
+						</select></td>
+					</tr>
+					
+
+
+					<tr>
+						<td colspan="2" align="center"><input type="submit"
+							name="submit" class="registerbtn"></td>
+					</tr>
+				</table>
+			</div>
+		</form>
+		<div class="container">
+		<h2><b>Fare Details Between the source and destination </b></h2>
+		<table border="1" class="table">
+			<tr>
+				<th>SOURCE </th>
+				<th>SOURCE NAME</th>
+				<th>SOURCE NAME</th>
+				<th> </th>
+			</tr>
+			<tr th:each="rateList, itemStat : *{rateList2}">
+                  <!--  <td><input th:field="*{rateList.sourceId}" /></td>  -->
+                  <td>[[${rateList.sourceName}]]</td>
+                  <td>[[${rateList.destinationName}]]</td>
+                  <td>[[${rateList.fare}]]</td>
+                 <td>
+					<a th:href="@{'deleteRate/'+${rateList.rateId}}" style="background-color: brown;">DELETE</a> || <a th:href="@{'editRate/'+${rateList.rateId}}" style="background-color: yellowgreen;"> EDIT </a>
+				</td>
+                </tr>
+			</table>
+		</div>
+		<div th:replace="header/header :: varFooter"></div>
+	</div>
+</body>
+</html>

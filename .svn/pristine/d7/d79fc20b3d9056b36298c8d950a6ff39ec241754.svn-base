@@ -1,0 +1,40 @@
+package com.qrcode.buspass.Repo;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+import com.qrcode.buspass.entity.DestinationMasterEntity;
+import com.qrcode.buspass.entity.RateMasterEntity;
+import com.qrcode.buspass.entity.SourceMastereEntity;
+
+
+@Repository
+public class RateMasterRepoImpl implements RateMasterRepo {
+	@PersistenceContext
+	EntityManager entityManager;
+	@Override
+	public Integer save(RateMasterEntity rateMasterEntity) {
+		// TODO Auto-generated method stub
+		Session session=entityManager.unwrap(Session.class);
+		return (Integer) session.save(rateMasterEntity);
+	}
+	@Override
+	public List<SourceMastereEntity> fetchAllSource() {
+			    
+		return entityManager.createQuery("From SourceMastereEntity").getResultList();
+	}
+	@Override
+	public List<DestinationMasterEntity> fetAllDestination() {
+		// TODO Auto-generated method stub
+		return  entityManager.createQuery("From DestinationMasterEntity ").getResultList();
+	}
+	
+
+}

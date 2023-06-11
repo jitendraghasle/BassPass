@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"> -->
+    <script th:src="@{/js/jquery.slim.min.js}"></script>
+    <script th:src="@{/js/popper.min.js}"></script>
+    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    
+    
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto+Slab:wght@200;400;600;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="hearderMAin">
+            <nav class="navbar navbar-expand-lg mainbg">
+                <a class="navbar-brand" href="#" style="font-family: 'Redressed', cursive;">BUS Booking</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="home.html"><i class="fa fa-home"> </i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profile.html">Pofile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Bookings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav  my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Log out</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="pgcontaents">
+            <div class="BookingMain">
+                <h2 class="pagehead text-center">Book With comfort</h2>
+                <form>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label for="from" class="form-label">From</label>
+                            <select class="form-control" id="from" name="sellist1">
+                                <option>Akola</option>
+                                <option>Mumbai</option>
+                                <option>Gondia</option>
+                                <option>Amravati</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="to" class="form-label">To</label>
+                            <select class="form-control" id="to" name="sellist1">
+                                <option>Gondia</option>
+                                <option>Amravati</option>
+                                <option>Akola</option>
+                                <option>Mumbai</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Date of journey</label>
+                            <input type="date" name="date" id="date" class="form-control">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ptype" class="form-label">Concessions</label>
+                            <select class="form-control" id="ptype" name="sellist1">
+                                <option>Child</option>
+                                <option>Senior cityson</option>
+                                <option>Ledies</option>
+                                <option>Handicap</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="button" class="btn btn-primary " style="padding-left: 2.5rem; padding-right: 2.5rem;">Search <i class="fa fa-search"></i></button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+        <div class="pb-0 pb-lg-4 footerMain">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-4 col-12 mb-4 mb-md-6 mb-lg-0 order-0">
+                        <a class="navbar-brand" href="#" style="font-family: 'Redressed', cursive;">BUS Booking</a>
+                        <p class=" mb-0 fw-medium">Book your trip in minute, get full Control for much longer.</p>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-1 order-md-2">
+                        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Company</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">About</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Sign Up</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Bookings</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-4 mb-4 mb-lg-0 order-lg-2 order-md-3">
+                        <h4 class="footer-heading-color fw-bold font-sans-serif mb-3 mb-lg-4">Contact</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Help/FAQ</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Login</a></li>
+                            <li class="mb-2"><a class="link-900 fs-1 fw-medium text-decoration-none" href="#!">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div><!-- end of .container-->
+        </div>
+      </div>
+</body>
+
+</html>

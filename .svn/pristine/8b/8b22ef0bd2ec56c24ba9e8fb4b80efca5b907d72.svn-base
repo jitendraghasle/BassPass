@@ -1,0 +1,52 @@
+spring.datasource.driverClassName=org.postgresql.Driver
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/bus
+spring.datasource.username=postgres
+spring.datasource.password=root
+
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQL9Dialect
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
+
+spring.jackson.locale=en_IN
+
+
+logging.level.org.springframework.ws=TRACE
+logging.level.org.springframework=INFO
+
+server.servlet.context-path = /buspass/
+
+
+
+server.servlet.session.timeout=20m
+spring.session.store-type=jdbc
+
+
+
+spring.servlet.multipart.max-file-size=50MB
+spring.servlet.multipart.max-request-size=50MB
+
+
+spring.application.name=Online Bus Pass Booking 
+spring.jmx.default-domain=Online Bus Pass Booking 
+
+
+# add these new properties
+spring.mail.transport.protocol=smtp
+spring.mail.from.email=mahaitsevaarth@gmail.com
+
+# modify these properties with your credentials
+
+# configuration email
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=kiranturkar2020@gmail.com
+spring.mail.password=Gondia@123
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+
